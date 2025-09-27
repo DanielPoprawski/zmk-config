@@ -25,9 +25,9 @@
         lower_layer {
             display-name = "Lower Layer";
             bindings = <
-&kp TAB    &kp N1  &kp N2  &kp N3    &kp N4  &kp N5            &kp N6     &kp N7    &kp N8           &kp N9     &kp N0  &kp BSPC
-&trans     &trans  &trans  &trans    &trans  &trans            &kp LEFT   &kp DOWN  &kp UP           &kp RIGHT  &trans  &kp ENTER
-&kp LSHFT  &trans  &trans  &trans    &trans  &trans            &trans     &trans    &trans           &trans     &trans  &trans
+&kp TAB    &kp N1  &kp N2  &kp N3    &kp N4  &kp N5            &kp N6     &kp N7    &kp N8           &kp N9     &kp N0        &kp BSPC
+&trans     &trans  &trans  &trans    &trans  &trans            &kp LEFT   &kp DOWN  &kp UP           &kp RIGHT  &kp CAPSLOCK  &kp ENTER
+&kp LSHFT  &trans  &trans  &trans    &trans  &trans            &trans     &trans    &trans           &trans     &trans        &trans
                            &kp LGUI  &trans  &kp LEFT_SHIFT    &kp SPACE  &trans    &kp RIGHT_SHIFT
             >;
         };
@@ -35,18 +35,18 @@
         raise_layer {
             display-name = "Raise Layer";
             bindings = <
-&kp TAB    &kp EXCL              &kp AT                 &kp HASH   &kp DLLR  &kp PRCNT         &kp CARET  &kp AMPS   &kp ASTRK  &kp LPAR  &kp RPAR  &kp BSPC
-&kp LCTRL  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp MINUS  &kp APOS  &kp BACKSLASH     &kp MINUS  &kp EQUAL  &kp LBKT   &kp RBKT  &kp BSLH  &kp GRAVE
-&kp LSHFT  &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp TILDE  &kp PIPE  &kp GRAVE         &kp UNDER  &kp PLUS   &kp LBRC   &kp RBRC  &kp PIPE  &kp TILDE
-                                                        &kp LGUI   &trans    &kp LEFT_SHIFT    &kp SPACE  &trans     &kp RALT
+&kp TAB    &kp EXCL              &kp AT                 &kp HASH   &kp DLLR  &kp PRCNT            &kp CARET  &kp AMPS   &kp ASTRK  &kp LPAR  &kp RPAR  &kp BSPC
+&kp LCTRL  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp MINUS  &kp APOS  &kp DOUBLE_QUOTES    &kp MINUS  &kp EQUAL  &kp LBKT   &kp RBKT  &kp BSLH  &kp GRAVE
+&kp LSHFT  &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp TILDE  &kp PIPE  &kp GRAVE            &kp UNDER  &kp PLUS   &kp LBRC   &kp RBRC  &kp PIPE  &kp TILDE
+                                                        &kp LGUI   &trans    &kp LEFT_SHIFT       &kp SPACE  &trans     &kp RALT
             >;
         };
 
         Both {
             bindings = <
-&trans      &trans        &trans        &trans        &trans        &trans            &trans           &trans      &trans            &trans             &trans  &trans
+&trans      &kp F11       &kp F2        &trans        &trans        &kp F5            &trans           &trans      &trans            &trans             &trans  &trans
 &bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4      &kp PRINTSCREEN  &kp K_PREV  &kp K_PLAY_PAUSE  &kp K_NEXT         &trans  &kp LG(LA(SPACE))
-&trans      &trans        &trans        &trans        &kp F5        &trans            &trans           &kp F11     &kp K_VOLUME_UP   &kp K_VOLUME_DOWN  &trans  &trans
+&trans      &trans        &trans        &trans        &trans        &trans            &trans           &trans      &kp K_VOLUME_UP   &kp K_VOLUME_DOWN  &trans  &trans
                                         &kp LGUI      &trans        &kp LEFT_SHIFT    &kp SPACE        &trans      &kp RIGHT_ALT
             >;
         };
