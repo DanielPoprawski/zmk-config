@@ -8,6 +8,20 @@
 #include <dt-bindings/zmk/keys.h>
 
 / {
+    combos {
+        compatible = "zmk,combos";
+
+        L_Alt {
+            bindings = <&kp LEFT_ALT>;
+            key-positions = <13 14>;
+        };
+
+        L_Ctrl {
+            bindings = <&kp LEFT_CONTROL>;
+            key-positions = <15 16>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
