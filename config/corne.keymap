@@ -14,11 +14,13 @@
         L_Alt {
             bindings = <&kp LEFT_ALT>;
             key-positions = <13 14>;
+            layers = <3>;
         };
 
         L_Ctrl {
             bindings = <&kp LEFT_CONTROL>;
             key-positions = <15 16>;
+            layers = <3>;
         };
     };
 
