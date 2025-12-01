@@ -14,13 +14,11 @@
         L_Alt {
             bindings = <&kp LEFT_ALT>;
             key-positions = <13 14>;
-            layers = <3>;
         };
 
         L_Ctrl {
             bindings = <&kp LEFT_CONTROL>;
             key-positions = <15 16>;
-            layers = <3>;
         };
     };
 
@@ -30,9 +28,9 @@
         default_layer {
             display-name = "Default Layer";
             bindings = <
-&kp ESCAPE        &kp Q  &kp W  &kp F     &kp P  &kp B             &kp J      &kp L  &kp U            &kp Y    &kp SEMI  &kp BSPC
-&kp TAB           &kp A  &kp R  &kp S     &kp T  &kp G             &kp M      &kp N  &kp E            &kp I    &kp O     &kp ENTER
-&kp LEFT_CONTROL  &kp Z  &kp X  &kp C     &kp D  &kp V             &kp K      &kp H  &kp COMMA        &kp DOT  &kp FSLH  &kp RIGHT_SHIFT
+&kp ESCAPE        &kp Q  &kp W  &kp E     &kp R  &kp T             &kp Y      &kp U  &kp I            &kp O    &kp P     &kp BSPC
+&kp TAB           &kp A  &kp S  &kp D     &kp F  &kp G             &kp H      &kp J  &kp K            &kp L    &kp SEMI  &kp ENTER
+&kp LEFT_CONTROL  &kp Z  &kp X  &kp C     &kp V  &kp B             &kp N      &kp M  &kp COMMA        &kp DOT  &kp FSLH  &kp RIGHT_SHIFT
                                 &kp LGUI  &mo 1  &kp LEFT_SHIFT    &kp SPACE  &mo 2  &kp RIGHT_SHIFT
             >;
         };
