@@ -14,11 +14,17 @@
         L_Alt {
             bindings = <&kp LEFT_ALT>;
             key-positions = <13 14>;
+            slow-release;
+            timeout-ms = <25>;
+            require-prior-idle-ms = <500>;
         };
 
         L_Ctrl {
             bindings = <&kp LEFT_CONTROL>;
             key-positions = <15 16>;
+            slow-release;
+            require-prior-idle-ms = <500>;
+            timeout-ms = <25>;
         };
     };
 
@@ -28,10 +34,10 @@
         default_layer {
             display-name = "Default Layer";
             bindings = <
-&kp ESCAPE        &kp Q  &kp W  &kp E     &kp R  &kp T             &kp Y      &kp U  &kp I            &kp O    &kp P     &kp BSPC
-&kp TAB           &kp A  &kp S  &kp D     &kp F  &kp G             &kp H      &kp J  &kp K            &kp L    &kp SEMI  &kp ENTER
-&kp LEFT_CONTROL  &kp Z  &kp X  &kp C     &kp V  &kp B             &kp N      &kp M  &kp COMMA        &kp DOT  &kp FSLH  &kp RIGHT_SHIFT
-                                &kp LGUI  &mo 1  &kp LEFT_SHIFT    &kp SPACE  &mo 2  &kp RIGHT_SHIFT
+&kp ESCAPE        &kp Q  &kp W  &kp E     &kp R  &kp T             &kp Y      &kp U  &kp I         &kp O    &kp P     &kp BSPC
+&kp TAB           &kp A  &kp S  &kp D     &kp F  &kp G             &kp H      &kp J  &kp K         &kp L    &kp SEMI  &kp ENTER
+&kp LEFT_CONTROL  &kp Z  &kp X  &kp C     &kp V  &kp B             &kp N      &kp M  &kp COMMA     &kp DOT  &kp FSLH  &kp RIGHT_SHIFT
+                                &kp LGUI  &mo 1  &kp LEFT_SHIFT    &kp SPACE  &mo 2  &kp CAPSLOCK
             >;
         };
 
@@ -48,10 +54,10 @@
         raise_layer {
             display-name = "Raise Layer";
             bindings = <
-&kp GRAVE  &kp EXCL  &kp AT          &kp HASH  &kp DLLR  &kp PRCNT         &kp CARET  &kp AMPS   &kp ASTRK  &kp LPAR         &kp RPAR  &kp BSPC
-&kp TILDE  &trans    &kp LEFT_BRACE  &kp FSLH  &kp APOS  &kp LBKT          &kp RBKT   &kp MINUS  &kp BSLH   &kp RIGHT_BRACE  &trans    &trans
-&kp PIPE   &trans    &trans          &trans    &trans    &trans            &trans     &trans     &kp COMMA  &kp PERIOD       &trans    &trans
-                                     &kp LGUI  &trans    &kp LEFT_SHIFT    &kp SPACE  &trans     &kp RALT
+&kp GRAVE  &kp EXCL  &kp AT          &kp HASH  &kp DLLR           &kp PRCNT         &kp CARET  &kp AMPS   &kp ASTRK  &kp LPAR         &kp RPAR  &kp BSPC
+&kp TILDE  &trans    &kp LEFT_BRACE  &kp FSLH  &kp APOS           &kp LBKT          &kp RBKT   &kp MINUS  &kp BSLH   &kp RIGHT_BRACE  &trans    &trans
+&kp PIPE   &trans    &trans          &trans    &kp DOUBLE_QUOTES  &trans            &trans     &kp UNDER  &kp COMMA  &kp PERIOD       &trans    &trans
+                                     &kp LGUI  &trans             &kp LEFT_SHIFT    &kp SPACE  &trans     &kp RALT
             >;
         };
 
