@@ -96,25 +96,20 @@
         hold_tap_soft_off: hold_tap_soft_off {
             compatible = "zmk,behavior-hold-tap";
             label = "HOLD_TAP_SOFT_OFF";
-            bindings = <&new_soft_off>, <&kp>;
+            bindings = <&soft_off>, <&kp>;
 
             #binding-cells = <2>;
             tapping-term-ms = <5000>;
             flavor = "tap-preferred";
         };
 
-        new_soft_off: new_soft_off {
-            compatible = "zmk,behavior-soft-off";
-            label = "NEW_SOFT_OFF";
-            #binding-cells = <0>;
-        };
+        three_period: three_period {
+            compatible = "zmk,behavior-hold-tap";
+            label = "THREE_PERIOD";
+            bindings = <&kp>, <&kp>;
 
-        three_period_td: three_period_td {
-            compatible = "zmk,behavior-tap-dance";
-            label = "THREE_PERIOD_TD";
-            #binding-cells = <0>;
-            bindings = <&kp NUMBER_3>, <&kp PERIOD>;
-
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
             tapping-term-ms = <150>;
         };
     };
@@ -135,9 +130,9 @@
         lower_layer {
             display-name = "Lower Layer";
             bindings = <
-&kp TAB    &kp N1  &kp N2  &kp N3      &kp N4  &kp N5            &kp N6     &kp N7  &kp N8  &kp N9            &kp N0        &kp BACKSPACE
-&trans     &trans  &trans  &kp DELETE  &trans  &trans            &kp MINUS  &kp N4  &kp N5  &kp N6            &kp ASTERISK  &kp ENTER
-&kp LSHFT  &trans  &trans  &trans      &trans  &trans            &kp PLUS   &kp N1  &kp N2  &three_period_td  &kp FSLH      &kp PERIOD
+&kp TAB    &kp N1  &kp N2  &kp N3      &kp N4  &kp N5            &kp N6     &kp N7  &kp N8  &kp N9                         &kp N0        &kp BACKSPACE
+&trans     &trans  &trans  &kp DELETE  &trans  &trans            &kp MINUS  &kp N4  &kp N5  &kp N6                         &kp ASTERISK  &kp ENTER
+&kp LSHFT  &trans  &trans  &trans      &trans  &trans            &kp PLUS   &kp N1  &kp N2  &three_period PERIOD NUMBER_3  &kp FSLH      &kp PERIOD
                            &kp LGUI    &trans  &kp LEFT_SHIFT    &kp EQUAL  &trans  &kp N0
             >;
         };
