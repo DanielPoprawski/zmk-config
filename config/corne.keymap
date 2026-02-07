@@ -96,12 +96,26 @@
         hold_tap_soft_off: hold_tap_soft_off {
             compatible = "zmk,behavior-hold-tap";
             label = "HOLD_TAP_SOFT_OFF";
-            bindings = <&soft_off>, <&kp>;
+            bindings = <&new_soft_off>, <&kp>;
 
             #binding-cells = <2>;
             tapping-term-ms = <5000>;
-            hold-trigger-key-positions = <0>;
             flavor = "tap-preferred";
+        };
+
+        new_soft_off: new_soft_off {
+            compatible = "zmk,behavior-soft-off";
+            label = "NEW_SOFT_OFF";
+            #binding-cells = <0>;
+        };
+
+        three_period_td: three_period_td {
+            compatible = "zmk,behavior-tap-dance";
+            label = "THREE_PERIOD_TD";
+            #binding-cells = <0>;
+            bindings = <&kp NUMBER_3>, <&kp PERIOD>;
+
+            tapping-term-ms = <150>;
         };
     };
 
@@ -121,9 +135,9 @@
         lower_layer {
             display-name = "Lower Layer";
             bindings = <
-&kp TAB    &kp N1  &kp N2  &kp N3      &kp N4  &kp N5            &kp N6     &kp N7  &kp N8  &kp N9               &kp N0        &kp BACKSPACE
-&trans     &trans  &trans  &kp DELETE  &trans  &trans            &kp MINUS  &kp N4  &kp N5  &kp N6               &kp ASTERISK  &kp ENTER
-&kp LSHFT  &trans  &trans  &trans      &trans  &trans            &kp PLUS   &kp N1  &kp N2  &mt PERIOD NUMBER_3  &kp FSLH      &kp PERIOD
+&kp TAB    &kp N1  &kp N2  &kp N3      &kp N4  &kp N5            &kp N6     &kp N7  &kp N8  &kp N9            &kp N0        &kp BACKSPACE
+&trans     &trans  &trans  &kp DELETE  &trans  &trans            &kp MINUS  &kp N4  &kp N5  &kp N6            &kp ASTERISK  &kp ENTER
+&kp LSHFT  &trans  &trans  &trans      &trans  &trans            &kp PLUS   &kp N1  &kp N2  &three_period_td  &kp FSLH      &kp PERIOD
                            &kp LGUI    &trans  &kp LEFT_SHIFT    &kp EQUAL  &trans  &kp N0
             >;
         };
@@ -140,9 +154,9 @@
 
         Both {
             bindings = <
-&bt BT_NXT      &kp F1  &kp F2   &kp F3    &kp F4   &kp C_BRIGHTNESS_INC    &kp PAGE_UP    &kp C_PREV  &kp C_PLAY_PAUSE   &kp C_NEXT       &kp PRINTSCREEN  &trans
+&bt BT_NXT      &kp F1  &kp F2   &kp F3    &kp F4   &kp C_BRIGHTNESS_INC    &kp PAGE_UP    &kp C_PREV  &kp C_PLAY_PAUSE   &kp C_NEXT       &kp PRINTSCREEN  &kp LS(LG(SPACE))
 &studio_unlock  &kp F5  &kp F6   &kp F7    &kp F8   &trans                  &kp LEFT       &kp DOWN    &kp UP_ARROW       &kp RIGHT        &trans           &kp LG(LA(SPACE))
-&bt BT_CLR      &kp F9  &kp F10  &kp F11   &kp F12  &kp C_BRIGHTNESS_DEC    &kp PAGE_DOWN  &kp C_MUTE  &kp C_VOLUME_DOWN  &kp C_VOLUME_UP  &trans           &trans
+&bt BT_CLR      &kp F9  &kp F10  &kp F11   &kp F12  &kp C_BRIGHTNESS_DEC    &kp PAGE_DOWN  &kp C_MUTE  &kp C_VOLUME_DOWN  &kp C_VOLUME_UP  &trans           &kp LG(LC(SPACE))
                                  &kp LGUI  &trans   &kp LEFT_SHIFT          &kp SPACE      &trans      &kp RIGHT_ALT
             >;
         };
