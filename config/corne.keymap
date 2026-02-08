@@ -124,7 +124,7 @@
         default_layer {
             display-name = "Default Layer";
             bindings = <
-&kp ESCAPE   &kp Q  &kp W  &kp E     &kp R  &kp T        &kp Y            &kp U  &kp I      &kp O    &kp P     &backspace_delete
+&kp ESCAPE   &kp Q  &kp W  &kp E     &kp R  &kp T        &kp Y            &kp U  &kp I      &kp O    &kp P     &kp BACKSPACE
 &kp TAB      &kp A  &kp S  &kp D     &kp F  &kp G        &kp H            &kp J  &kp K      &kp L    &kp SEMI  &kp ENTER
 &ctrl_shift  &kp Z  &kp X  &kp C     &kp V  &kp B        &kp N            &kp M  &kp COMMA  &kp DOT  &kp FSLH  &kp RIGHT_SHIFT
                            &kp LGUI  &mo 1  &kp SPACE    &kp RIGHT_SHIFT  &mo 2  &caps_alt
@@ -144,7 +144,7 @@
         raise_layer {
             display-name = "Raise Layer";
             bindings = <
-&kp GRAVE  &kp EXCL  &kp AT  &kp HASH           &kp DLLR  &kp PRCNT    &kp CARET        &kp AMPS   &kp ASTRK       &kp LPAR    &kp RPAR  &trans
+&kp GRAVE  &kp EXCL  &kp AT  &kp HASH           &kp DLLR  &kp PRCNT    &kp CARET        &kp AMPS   &kp ASTRK       &kp LPAR    &kp RPAR  &kp DELETE
 &kp TILDE  &trans    &trans  &kp DOUBLE_QUOTES  &kp APOS  &kp SLASH    &kp BACKSLASH    &kp MINUS  &kp UNDERSCORE  &trans      &trans    &trans
 &kp PIPE   &trans    &trans  &trans             &trans    &trans       &trans           &trans     &kp COMMA       &kp PERIOD  &trans    &trans
                              &kp LGUI           &trans    &kp SPACE    &kp RIGHT_SHIFT  &trans     &kp RALT
