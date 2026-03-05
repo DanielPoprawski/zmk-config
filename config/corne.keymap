@@ -84,37 +84,29 @@
     };
 
     behaviors {
-        ctrl_shift: ctrl_shift {
-            compatible = "zmk,behavior-tap-dance";
-            label = "CTRL_SHIFT";
-            #binding-cells = <0>;
-            bindings = <&kp LCTRL>, <&kp LEFT_SHIFT>;
-
-            tapping-term-ms = <200>;
-        };
-
-        hold_tap: hold_tap {
-            compatible = "zmk,behavior-hold-tap";
-            label = "HOLD_TAP";
-            bindings = <&kp>, <&kp>;
-
-            #binding-cells = <2>;
-            flavor = "tap-preferred";
-            tapping-term-ms = <150>;
-        };
-
-        backspace_delete: backspace_delete {
-            compatible = "zmk,behavior-tap-dance";
-            label = "BACKSPACE_DELETE";
-            #binding-cells = <0>;
-            bindings = <&kp BACKSPACE>, <&kp DELETE>;
-        };
-
         caps_alt: caps_alt {
             compatible = "zmk,behavior-tap-dance";
             label = "CAPS_ALT";
             #binding-cells = <0>;
             bindings = <&kp CAPSLOCK>, <&kp RIGHT_ALT>;
+        };
+
+        mod_morph_space: mod_morph_space {
+            compatible = "zmk,behavior-mod-morph";
+            label = "MOD_MORPH_SPACE";
+            bindings = <&kp SPACE>, <&kp LEFT_SHIFT>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LGUI)>;
+        };
+
+        mod_morph_shift: mod_morph_shift {
+            compatible = "zmk,behavior-mod-morph";
+            label = "MOD_MORPH_SHIFT";
+            bindings = <&kp RIGHT_SHIFT>, <&kp SPACE>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LGUI)>;
         };
     };
 
@@ -124,30 +116,30 @@
         default_layer {
             display-name = "Default Layer";
             bindings = <
-&kp ESCAPE   &kp Q  &kp W  &kp E     &kp R  &kp T        &kp Y            &kp U  &kp I      &kp O    &kp P     &kp BACKSPACE
-&kp TAB      &kp A  &kp S  &kp D     &kp F  &kp G        &kp H            &kp J  &kp K      &kp L    &kp SEMI  &kp ENTER
-&ctrl_shift  &kp Z  &kp X  &kp C     &kp V  &kp B        &kp N            &kp M  &kp COMMA  &kp DOT  &kp FSLH  &kp RIGHT_SHIFT
-                           &kp LGUI  &mo 1  &kp SPACE    &kp RIGHT_SHIFT  &mo 2  &caps_alt
+&kp ESCAPE  &kp Q  &kp W  &kp E     &kp R  &kp T               &kp Y             &kp U  &kp I      &kp O    &kp P     &kp BACKSPACE
+&kp TAB     &kp A  &kp S  &kp D     &kp F  &kp G               &kp H             &kp J  &kp K      &kp L    &kp SEMI  &kp ENTER
+&kp LCTRL   &kp Z  &kp X  &kp C     &kp V  &kp B               &kp N             &kp M  &kp COMMA  &kp DOT  &kp FSLH  &kp RIGHT_SHIFT
+                          &kp LGUI  &mo 1  &mod_morph_space    &mod_morph_shift  &mo 2  &caps_alt
             >;
         };
 
         lower_layer {
             display-name = "Lower Layer";
             bindings = <
-&kp TAB    &kp N1  &kp N2  &kp N3    &kp N4  &kp N5       &kp N6                 &kp N7  &kp N8  &kp N9                     &kp N0        &trans
-&trans     &kp N6  &kp N7  &kp N8    &kp N9  &kp N0       &kp MINUS              &kp N4  &kp N5  &kp N6                     &kp ASTERISK  &kp ENTER
-&kp LSHFT  &trans  &trans  &sk F3    &trans  &trans       &kp PLUS               &kp N1  &kp N2  &hold_tap PERIOD NUMBER_3  &kp FSLH      &kp PERIOD
-                           &kp LGUI  &trans  &kp SPACE    &hold_tap SPACE EQUAL  &trans  &kp N0
+&kp TAB    &kp N1  &kp N2  &kp N3    &kp N4  &kp N5            &kp N6     &kp N7  &kp N8  &kp N9        &kp N0        &trans
+&trans     &kp N6  &kp N7  &kp N8    &kp N9  &kp N0            &kp MINUS  &kp N4  &kp N5  &kp N6        &kp ASTERISK  &kp ENTER
+&kp LSHFT  &trans  &trans  &sk F3    &trans  &trans            &kp PLUS   &kp N1  &kp N2  &kp NUMBER_3  &kp FSLH      &kp PERIOD
+                           &kp LGUI  &trans  &kp LEFT_SHIFT    &kp EQUAL  &trans  &kp N0
             >;
         };
 
         raise_layer {
             display-name = "Raise Layer";
             bindings = <
-&kp GRAVE  &kp EXCL  &kp AT  &kp HASH           &kp DLLR  &kp PRCNT    &kp CARET        &kp AMPS   &kp ASTRK       &kp LPAR    &kp RPAR  &kp DELETE
-&kp TILDE  &trans    &trans  &kp DOUBLE_QUOTES  &kp APOS  &kp SLASH    &kp BACKSLASH    &kp MINUS  &kp UNDERSCORE  &trans      &trans    &trans
-&kp PIPE   &trans    &trans  &trans             &trans    &trans       &trans           &trans     &kp COMMA       &kp PERIOD  &trans    &trans
-                             &kp LGUI           &trans    &kp SPACE    &kp RIGHT_SHIFT  &trans     &kp RALT
+&kp GRAVE  &kp EXCL  &kp AT  &kp HASH           &kp DLLR        &kp PRCNT          &kp CARET         &kp AMPS           &kp ASTRK       &kp LPAR    &kp RPAR  &kp DELETE
+&kp TILDE  &trans    &trans  &kp DOUBLE_QUOTES  &kp APOS        &kp SLASH          &kp BACKSLASH     &kp MINUS          &kp UNDERSCORE  &trans      &trans    &trans
+&kp PIPE   &trans    &trans  &trans             &kp LEFT_BRACE  &kp RIGHT_BRACE    &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp COMMA       &kp PERIOD  &trans    &trans
+                             &kp LGUI           &trans          &kp SPACE          &kp RIGHT_SHIFT   &trans             &kp RALT
             >;
         };
 
@@ -155,7 +147,7 @@
             bindings = <
 &bt BT_NXT      &kp F1  &kp F2   &kp F3    &kp F4   &kp C_BRIGHTNESS_INC    &kp PAGE_UP      &kp C_PREV  &kp C_PLAY_PAUSE   &kp C_NEXT       &kp PRINTSCREEN  &kp LS(LG(SPACE))
 &studio_unlock  &kp F5  &kp F6   &kp F7    &kp F8   &trans                  &kp LEFT         &kp DOWN    &kp UP_ARROW       &kp RIGHT        &trans           &kp LG(LA(SPACE))
-&bt BT_CLR      &kp F9  &kp F10  &kp F11   &kp F12  &kp C_BRIGHTNESS_DEC    &kp PAGE_DOWN    &kp C_MUTE  &kp C_VOLUME_DOWN  &kp C_VOLUME_UP  &trans           &kp LG(LC(SPACE))
+&trans          &kp F9  &kp F10  &kp F11   &kp F12  &kp C_BRIGHTNESS_DEC    &kp PAGE_DOWN    &kp C_MUTE  &kp C_VOLUME_DOWN  &kp C_VOLUME_UP  &trans           &kp LG(LC(SPACE))
                                  &kp LGUI  &trans   &kp SPACE               &kp RIGHT_SHIFT  &trans      &kp RIGHT_ALT
             >;
         };
